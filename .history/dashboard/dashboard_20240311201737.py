@@ -111,7 +111,6 @@ def main():
     sns.barplot(
         x=["Hari Libur", "Hari Kerja/Biasa"], y=[holiday.mean(), workingday.mean()]
     )
-    st.set_option('deprecation.showPyplotGlobalUse', False)
     plt.xlabel("Tipe Hari")
     plt.ylabel("Mean")
     plt.title("Jumlah Rata-rata Peminjaman Sepeda Berdasarkan Tipe Hari")
@@ -126,7 +125,6 @@ def main():
 
     plt.figure(figsize=(10, 6))
     sns.barplot(x="season", y="cnt", data=cleaned_day, estimator="mean")
-    st.set_option('deprecation.showPyplotGlobalUse', False)
     plt.title("Jumlah Rata-rata Peminjaman Sepeda Berdasarkan Musim")
     plt.xlabel("Musim")
     plt.ylabel("Mean")
@@ -140,7 +138,6 @@ def main():
 
     plt.figure(figsize=(10, 6))
     sns.pointplot(x="weathersit", y="cnt", data=cleaned_day, errorbar=None)
-    st.set_option('deprecation.showPyplotGlobalUse', False)
     plt.xlabel("Weather Situation")
     plt.ylabel("Average Bike Rental Count")
     plt.title("Average Bike Rental Count by Weather Situation")
