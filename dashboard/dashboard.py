@@ -16,18 +16,15 @@ cleaned_day = day.drop(
 
 
 def map_yr_column(cleaned_day):
-    """Map values in 'yr' column."""
     return cleaned_day["yr"].replace({0: 2011, 1: 2012})
 
 
 def map_season_column(cleaned_day):
-    """Map values in 'season' column."""
     season_mapping = {1: "Spring", 2: "Summer", 3: "Fall", 4: "Winter"}
     return cleaned_day["season"].replace(season_mapping)
 
 
 def map_weathersit_column(cleaned_day):
-    """Map values in 'weathersit' column."""
     weather_mapping = {
         1: "Clear/Cloudy",
         2: "Mist/Cloudy",
@@ -38,7 +35,6 @@ def map_weathersit_column(cleaned_day):
 
 
 def map_month_column(cleaned_day):
-    """Map values in 'mnth' column."""
     month_mapping = {
         1: "January",
         2: "February",
@@ -57,7 +53,6 @@ def map_month_column(cleaned_day):
 
 
 def map_weekday_column(cleaned_day):
-    """Map values in 'weekday' column."""
     weekday_mapping = {
         0: "Sunday",
         1: "Monday",
