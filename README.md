@@ -1,5 +1,5 @@
 # Belajar Analisis Data Dengan Pythin Dicoding ✨
-## Dataset : Bike Sharing
+## Dataset : Bike Sharing (Folder data)
 
 ## Setup environment
 1. pip install pandas
