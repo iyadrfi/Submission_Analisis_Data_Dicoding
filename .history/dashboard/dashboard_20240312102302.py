@@ -12,7 +12,13 @@ def main():
     st.title("Proyek Akhir Dicoding : Belajar Analisis Data Dengan Python")
     st.write("- Nama: [Rafi Iyad Madani Chaidir]")
     st.write("- Email: [rafiiyad2004@gmail.com]")
-    st.write("- ID Dicoding: [rafi_iyad]") 
+    st.write("- ID Dicoding: [rafi_iyad]")
+
+    cleaned_day["yr"] = map_yr_column(cleaned_day)
+    cleaned_day["season"] = map_season_column(cleaned_day)
+    cleaned_day["weathersit"] = map_weathersit_column(cleaned_day)
+    cleaned_day["mnth"] = map_month_column(cleaned_day)
+    cleaned_day["weekday"] = map_weekday_column(cleaned_day)
 
     holiday = cleaned_day[
         (cleaned_day["workingday"] == 0) | (cleaned_day["holiday"] == 1)
@@ -31,7 +37,7 @@ def main():
 
     # Display cleaned data
     st.header("Import Data Day")
-    st.write(cleaned_day)
+    st.write(day)
 
     # Display cleaned data
     st.header("Cleaned Data")

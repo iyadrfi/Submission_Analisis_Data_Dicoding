@@ -31,7 +31,7 @@ def main():
 
     # Display cleaned data
     st.header("Import Data Day")
-    st.write(cleaned_day)
+    st.write(day)
 
     # Display cleaned data
     st.header("Cleaned Data")
