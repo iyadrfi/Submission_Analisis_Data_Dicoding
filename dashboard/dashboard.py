@@ -82,7 +82,8 @@ def main():
 
     # Menambahkan angka asli di atas setiap batang
     for p in ax.patches:
-        ax.annotate(f'{p.get_height():.0f}', (p.get_x() + p.get_width() / 2, p.get_height()), ha='center', va='bottom')
+        if not pd.isna(p.get_height()):  # Check jika nilai tidak NaN
+            ax.annotate(f'{p.get_height():.0f}', (p.get_x() + p.get_width() / 2, p.get_height()), ha='center', va='bottom')
     st.pyplot()
 
 
