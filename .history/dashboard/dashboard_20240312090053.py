@@ -121,19 +121,14 @@ def main():
     st.write(
         "Hasil Analisis mengatakan bahwa musim memiliki pengaruh signifikan terhadap jumlah peminjaman sepeda. Musim gugur menunjukkan rata-rata peminjaman sepeda tertinggi, diikuti oleh musim panas, musim dingin, dan musim semi secara berurutan. Hal ini menunjukkan bahwa perubahan musim memengaruhi minat masyarakat dalam menggunakan sepeda, dengan tingkat peminjaman yang lebih tinggi terjadi pada musim yang lebih hangat dan cerah. Dengan demikian, kesimpulan ini memberitahu pentingnya faktor cuaca dan musim dalam memprediksi pola peminjaman sepeda."
     )
-   
+
     plt.figure(figsize=(10, 6))
-    ax = sns.barplot(x='season', y='cnt', data=cleaned_day, estimator='mean', palette='viridis', errorbar=None)
-    plt.title('Rata-rata Peminjaman Sepeda per Musim')
-    plt.xlabel('Musim')
-    plt.ylabel('Jumlah Rata-rata Peminjaman')
-    plt.xticks(rotation=45)  # Memutar label sumbu x agar tidak tumpang tindih
-    plt.grid(False)  # Menghapus grid
-
-# Menambahkan angka asli di atas setiap batang
-    for p in ax.patches:
-        ax.annotate(f'{p.get_height():.0f}', (p.get_x() + p.get_width() / 2., p.get_height()), ha='center', va='center', xytext=(0, 5), textcoords='offset points')
-
+    sns.barplot(x="season", y="cnt", data=cleaned_day, estimator="mean")
+    st.set_option('deprecation.showPyplotGlobalUse', False)
+    plt.title("Jumlah Rata-rata Peminjaman Sepeda Berdasarkan Musim")
+    plt.xlabel("Musim")
+    plt.ylabel("Mean")
+    plt.xticks([0, 1, 2, 3], ["Spring", "Summer", "Fall", "Winter"])
     st.pyplot()
 
     st.header("Pertanyaan 3 : Bagaimana cuaca memengaruhi jumlah peminjaman sepeda?")
@@ -141,17 +136,16 @@ def main():
         "Dengan analisis yang telah dilakukan menunjukkan bahwa kondisi cuaca memiliki pengaruh yang signifikan terhadap jumlah total peminjaman sepeda. Kondisi cuaca yang baik, seperti cuaca cerah dan bersih, cenderung meningkatkan jumlah peminjaman sepeda, sedangkan kondisi cuaca buruk, seperti hujan atau salju, cenderung mengurangi jumlah peminjaman sepeda bahkan tidak terjadi sama sekali peminjaman sepeda. Hal ini menunjukkan bahwa keputusan untuk meminjam sepeda dipengaruhi oleh kondisi cuaca saat itu."
     )
 
-    plt.figure(figsize=(12, 6))
-    ax = sns.barplot(x='weathersit', y='cnt', data=cleaned_day, errorbar=None, palette='muted')
-    plt.xlabel('Situasi Cuaca')
-    plt.ylabel('Jumlah Penyewaan Sepeda Rata-rata')
-    plt.title('Jumlah Penyewaan Sepeda Rata-rata Berdasarkan Situasi Cuaca')
-    plt.xticks([0, 1, 2, 3], ['Clear/Cloudy', 'Mist/Cloudy', 'Light Snow/Rain', 'Heavy Rain/Snow'])
-    plt.grid(False)
-
-    # Menambahkan angka asli di atas setiap batang
-    for p in ax.patches:
-        ax.annotate(f'{p.get_height():.0f}', (p.get_x() + p.get_width() / 2, p.get_height()), ha='center', va='bottom')
+    plt.figure(figsize=(10, 6))
+    sns.pointplot(x="weathersit", y="cnt", data=cleaned_day, errorbar=None)
+    st.set_option('deprecation.showPyplotGlobalUse', False)
+    plt.xlabel("Weather Situation")
+    plt.ylabel("Average Bike Rental Count")
+    plt.title("Average Bike Rental Count by Weather Situation")
+    plt.xticks(
+        [0, 1, 2, 3],
+        ["Clear/Cloudy", "Mist/Cloudy", "Light Snow/Rain", "Heavy Rain/Snow"],
+    )
     st.pyplot()
 
 

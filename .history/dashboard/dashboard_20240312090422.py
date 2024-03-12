@@ -144,8 +144,8 @@ def main():
     plt.figure(figsize=(12, 6))
     ax = sns.barplot(x='weathersit', y='cnt', data=cleaned_day, errorbar=None, palette='muted')
     plt.xlabel('Situasi Cuaca')
-    plt.ylabel('Jumlah Penyewaan Sepeda Rata-rata')
-    plt.title('Jumlah Penyewaan Sepeda Rata-rata Berdasarkan Situasi Cuaca')
+    plt.ylabel('Jumlah Penyewaan Sepeda ')
+    plt.title('Jumlah Penyewaan Sepeda Berdasarkan Situasi Cuaca')
     plt.xticks([0, 1, 2, 3], ['Clear/Cloudy', 'Mist/Cloudy', 'Light Snow/Rain', 'Heavy Rain/Snow'])
     plt.grid(False)
 
