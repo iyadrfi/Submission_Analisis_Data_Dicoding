@@ -127,7 +127,6 @@ def main():
    
     plt.figure(figsize=(10, 6))
     ax = sns.barplot(x='season', y='cnt', data=cleaned_day, estimator='mean', palette='viridis', errorbar=None)
-    st.set_option('deprecation.showPyplotGlobalUse', False)
     plt.title('Rata-rata Peminjaman Sepeda per Musim')
     plt.xlabel('Musim')
     plt.ylabel('Jumlah Rata-rata Peminjaman')
