@@ -8,7 +8,6 @@ sns.set(style="dark")
 cleaned_day = pd.read_csv(
     "https://raw.githubusercontent.com/iyadrfi/Submission_Analisis_Data_Dicoding/main/dashboard/cleaned_day.csv"
 )
-
 def main():
     st.title("Proyek Akhir Dicoding : Belajar Analisis Data Dengan Python")
     st.write("- Nama: [Rafi Iyad Madani Chaidir]")
@@ -36,20 +35,21 @@ def main():
 
     st.header("Pertanyaan 1 : Rata-rata Peminjaman Sepeda Menurut Tipe Hari")
     st.write(
-        "Dari hasil analisis, terlihat bahwa rata-rata peminjaman sepeda pada hari biasa/kerja sebesar 51.4% sedangkan hari libur (holiday) 48.6%. Hal ini menunjukkan bahwa mayoritas peminjaman sepeda terjadi pada hari-hari biasa, yang mungkin disebabkan oleh aktivitas sehari-hari seperti pergi ke tempat kerja atau sekolah. Oleh karena itu, dapat disimpulkan bahwa hari biasa cenderung menjadi periode di mana peminjaman sepeda paling banyak terjadi"
+        "Dari hasil analisis, terlihat bahwa rata-rata peminjaman sepeda pada hari biasa (non-holiday) lebih tinggi dibandingkan dengan hari libur (holiday). Hal ini menunjukkan bahwa mayoritas peminjaman sepeda terjadi pada hari-hari biasa, yang mungkin disebabkan oleh aktivitas sehari-hari seperti pergi ke tempat kerja atau sekolah. Oleh karena itu, dapat disimpulkan bahwa hari biasa cenderung menjadi periode di mana peminjaman sepeda paling banyak terjadi"
     )
     variabel = ['Hari Libur', 'Hari Kerja/Biasa']
     mean_counts = [holiday.mean(), workingday.mean()]
     plt.figure(figsize=(8, 6))
     plt.pie(mean_counts, labels=variabel, autopct='%1.1f%%', colors=sns.color_palette('Set3'))
     plt.title('Persentase Jumlah Rata-rata Peminjaman Sepeda\nBerdasarkan Tipe Hari')
+    plt.show()
     st.pyplot()
 
     st.header(
         "Pertanyaan 2 : Perbedaan Dalam Pola Peminjaman Sepeda Antara Musim-Musim Tertentu?"
     )
     st.write(
-        "Hasil Analisis mengatakan bahwa musim memiliki pengaruh signifikan terhadap jumlah peminjaman sepeda. Musim gugur (5644) menunjukkan rata-rata peminjaman sepeda tertinggi, diikuti oleh musim panas (4922), musim dingin (4728), dan musim semi (2604) secara berurutan. Hal ini menunjukkan bahwa perubahan musim memengaruhi minat masyarakat dalam menggunakan sepeda, dengan tingkat peminjaman yang lebih tinggi terjadi pada musim yang lebih hangat dan cerah. Dengan demikian, kesimpulan ini memberitahu pentingnya faktor cuaca dan musim dalam memprediksi pola peminjaman sepeda."
+        "Hasil Analisis mengatakan bahwa musim memiliki pengaruh signifikan terhadap jumlah peminjaman sepeda. Musim gugur menunjukkan rata-rata peminjaman sepeda tertinggi, diikuti oleh musim panas, musim dingin, dan musim semi secara berurutan. Hal ini menunjukkan bahwa perubahan musim memengaruhi minat masyarakat dalam menggunakan sepeda, dengan tingkat peminjaman yang lebih tinggi terjadi pada musim yang lebih hangat dan cerah. Dengan demikian, kesimpulan ini memberitahu pentingnya faktor cuaca dan musim dalam memprediksi pola peminjaman sepeda."
     )
    
     plt.figure(figsize=(10, 6))
@@ -60,7 +60,7 @@ def main():
     plt.xticks(rotation=45)  # Memutar label sumbu x agar tidak tumpang tindih
     plt.grid(False)  # Menghapus grid
 
-    # Menambahkan angka asli di atas setiap batang
+# Menambahkan angka asli di atas setiap batang
     for p in ax.patches:
         ax.annotate(f'{p.get_height():.0f}', (p.get_x() + p.get_width() / 2., p.get_height()), ha='center', va='center', xytext=(0, 5), textcoords='offset points')
 
@@ -68,7 +68,7 @@ def main():
 
     st.header("Pertanyaan 3 : Bagaimana cuaca memengaruhi jumlah peminjaman sepeda?")
     st.write(
-        "Dengan analisis yang telah dilakukan menunjukkan  bahwa kondisi cuaca memiliki pengaruh yang signifikan terhadap jumlah total peminjaman sepeda. Kondisi cuaca yang baik, seperti cuaca cerah dan bersih, cenderung meningkatkan jumlah peminjaman sepeda, sedangkan kondisi cuaca buruk, seperti hujan atau salju, cenderung mengurangi jumlah peminjaman sepeda bahkan tidak terjadi sama sekali peminjaman sepeda. Hal ini menunjukkan bahwa keputusan untuk meminjam sepeda dipengaruhi oleh kondisi cuaca saat itu."
+        "Dengan analisis yang telah dilakukan menunjukkan bahwa kondisi cuaca memiliki pengaruh yang signifikan terhadap jumlah total peminjaman sepeda. Kondisi cuaca yang baik, seperti cuaca cerah dan bersih, cenderung meningkatkan jumlah peminjaman sepeda, sedangkan kondisi cuaca buruk, seperti hujan atau salju, cenderung mengurangi jumlah peminjaman sepeda bahkan tidak terjadi sama sekali peminjaman sepeda. Hal ini menunjukkan bahwa keputusan untuk meminjam sepeda dipengaruhi oleh kondisi cuaca saat itu."
     )
 
     plt.figure(figsize=(12, 6))
