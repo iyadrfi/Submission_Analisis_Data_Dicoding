@@ -114,6 +114,7 @@ def main():
     mean_counts = [holiday.mean(), workingday.mean()]
     plt.figure(figsize=(8, 6))
     plt.pie(mean_counts, labels=variabel, autopct='%1.1f%%', colors=sns.color_palette('Set3'))
+    st.set_option('deprecation.showPyplotGlobalUse', False)
     plt.title('Persentase Jumlah Rata-rata Peminjaman Sepeda\nBerdasarkan Tipe Hari')
     plt.show()
     st.pyplot()
@@ -127,6 +128,7 @@ def main():
    
     plt.figure(figsize=(10, 6))
     ax = sns.barplot(x='season', y='cnt', data=cleaned_day, estimator='mean', palette='viridis', errorbar=None)
+    st.set_option('deprecation.showPyplotGlobalUse', False)
     plt.title('Rata-rata Peminjaman Sepeda per Musim')
     plt.xlabel('Musim')
     plt.ylabel('Jumlah Rata-rata Peminjaman')
@@ -146,6 +148,7 @@ def main():
 
     plt.figure(figsize=(12, 6))
     ax = sns.barplot(x='weathersit', y='cnt', data=cleaned_day, errorbar=None, palette='muted')
+    st.set_option('deprecation.showPyplotGlobalUse', False)
     plt.xlabel('Situasi Cuaca')
     plt.ylabel('Jumlah Penyewaan Sepeda Rata-rata')
     plt.title('Jumlah Penyewaan Sepeda Rata-rata Berdasarkan Situasi Cuaca')
