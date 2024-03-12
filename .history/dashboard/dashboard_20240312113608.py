@@ -42,7 +42,6 @@ def main():
     mean_counts = [holiday.mean(), workingday.mean()]
     plt.figure(figsize=(8, 6))
     plt.pie(mean_counts, labels=variabel, autopct='%1.1f%%', colors=sns.color_palette('Set3'))
-    st.set_option('deprecation.showPyplotGlobalUse', False)
     plt.title('Persentase Jumlah Rata-rata Peminjaman Sepeda\nBerdasarkan Tipe Hari')
     st.pyplot()
 
