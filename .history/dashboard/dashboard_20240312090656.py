@@ -8,9 +8,7 @@ sns.set(style="dark")
 day = pd.read_csv(
     "https://raw.githubusercontent.com/iyadrfi/Submission_Analisis_Data_Dicoding/main/dashboard/day.csv"
 )
-hour = pd.read_csv(
-    "https://raw.githubusercontent.com/iyadrfi/Submission_Analisis_Data_Dicoding/main/dashboard/hour.csv"
-)
+hour = pd.read_csv("https://raw.githubusercontent.com/iyadrfi/Submission_Analisis_Data_Dicoding/main/dashboard/hour.csv")
 
 
 cleaned_day = day.drop(
